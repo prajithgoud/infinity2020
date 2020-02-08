@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .first
+    {
+        background-color: black;
+        position:absolute;
+        padding-bottom:1000px;
+        left:0px;
+    }
+    .last 
+    {
+        background-color: rgb(92, 105, 218);
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+        padding-bottom:1000px;
+        position:absolute;
+        left:300px;
+        right:0px;
+    }
+.collapsible {
+  background-color:black;
+
+  color:white;
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  border:none;
+  text-align: left;
+  outline: 8px ;
+  font-size: 20px;
+}
+
+
+.collapsible:after {
+  content: '\002B';
+  color:white;
+  background-color:black ;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding:0 18px;
+  max-height: 0;
+  overflow-x:hidden;
+  transition:cubic-bezier();
+  background-color: white;
+  margin-bottom: 10px;
+  transition: max-height 0.3s ease-out ;
+}
+</style>
+</head>
+<body>
+    <div class="first">
+        <img src="../gvinf/images/logo1.jpeg"  height="400px" style="vertical-align:bottom">              
+    </div>
+    <div class = "last">
+<h2>
+    ABOUT INFINITY,OSMANIA UNIVERSITY
+    <br>
+    <br>
+    <button class="collapsible">OVERVIEW</button>
+<div class="content">
+  <p1>//////////////////////////////////////////////////////</p1>
+</div>
+
+<button class="collapsible">AWARDS AND RECOGNITION</button>
+<div class="content">
+  <p1>///////////////////////////////////////////////////</p1>
+</div>
+<button class="collapsible">HISTORY</button>
+<div class="content">
+  <p1>///////////////////////////////////////////////////</p1>
+</div>
+</h2>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</body>
+</html>
